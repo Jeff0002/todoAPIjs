@@ -4,11 +4,7 @@ var UserSchema = new mongoose.Schema({
   name: String,
   Age: Number,
   LoyaltyPoints: Number,
-  FavoriteBarber: String,
-  Appointment: [
-    {BarberName: String,
-      Time: Date
-    }]
+  FavoriteBarber: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
