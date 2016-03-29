@@ -6,19 +6,18 @@ var Todo = require('../models/Todo.js');
 
 
 router.get('/test', function (req, res) {
-    res.json({"test": "success"});
-})
-
-
-
-router.get('/hello', function (req, res) {
     res.json({
-        "test": "hello"
+        "test": "success"
+        
     });
 })
 
-
-
+router.get('/user-all', function (req, res, next) {
+    user.find(function (err, data) {
+        if (err) return next(err);
+        res.json(data);
+    });
+});
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
