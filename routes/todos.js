@@ -12,20 +12,11 @@ router.get('/test', function (req, res) {
     });
 })
 
-var MongoClient = require('mongodb').MongoClient
-var URL = 'mongodb://bizbuzz:123456@ds025399.mlab.com:25399/bizbuzz'
-
-router.get('/user-all', function (req, res, next) {
-MongoClient.connect(URL, function(err, db) {
-  if (err) return
-
-  var collection = db.collection('user')
-    collection.find({name: 'Jeff'}).toArray(function(err, docs) {
-      res.json(docs[0])
-      db.close()
-    })
+router.get('/all', function(req, res) {
+  User.all(function(err, docs) {
+    res.render('user', {user: docs})
   })
-});
+})
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
