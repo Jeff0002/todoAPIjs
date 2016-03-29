@@ -12,9 +12,10 @@ router.get('/test', function (req, res) {
     });
 })
 
-router.get('/all', function(req, res) {
-  User.find(function(err, docs) {
-    res.render('user', {user: docs})
+router.get('/all', function(req, res, next) {
+  Bizbuzz.find(function(err, docs) {
+    if (err) return next(err);
+    res.json(todos);
   })
 })
 
