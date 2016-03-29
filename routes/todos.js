@@ -12,6 +12,20 @@ router.get('/test', function (req, res) {
     });
 })
 
+var MongoClient = require('mongodb').MongoClient
+
+var URL = 'mongodb://localhost:27017/mydatabase'
+
+MongoClient.connect(URL, function(err, db) {
+  if (err) return
+
+  var collection = db.collection('user')
+    collection.find({name: 'jeff'}).toArray(function(err, docs) {
+      console.log(docs[0])
+      db.close()
+    })
+  })
+
 router.get('/user-all', function (req, res, next) {
     User.find(function (err, data) {
         if (err) return next(err);
