@@ -14,7 +14,7 @@ router.get('/test', function (req, res) {
 
 var MongoClient = require('mongodb').MongoClient
 
-var URL = 'mongodb://localhost:27017/mydatabase'
+var URL = 'mongodb://bizbuzz:123456@ds025399.mlab.com:25399/bizbuzz'
 
 MongoClient.connect(URL, function(err, db) {
   if (err) return
