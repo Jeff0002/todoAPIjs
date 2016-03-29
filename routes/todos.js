@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var Todo = require('../models/Todo.js');
+var User = require('../models/User.js');
 
 
 router.get('/test', function (req, res) {
@@ -13,7 +13,7 @@ router.get('/test', function (req, res) {
 })
 
 router.get('/user-all', function (req, res, next) {
-    user.find(function (err, data) {
+    User.find(function (err, data) {
         if (err) return next(err);
         res.json(data);
     });
