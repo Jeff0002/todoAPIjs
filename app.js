@@ -9,10 +9,8 @@ var routes = require('./routes/index');
 var todos = require('./routes/todos');
 
 var mongoose = require('mongoose');
-//var url = 'mongodb://tebyt:togethernyu@ds013738.mongolab.com:13738/heroku_t1qnbv72';
-//var url = 'mongodb://localhost/todoApp';
+
 var url = 'mongodb://bizbuzz:123456@ds025399.mlab.com:25399/bizbuzz';
-//mongoose.connect('mongodb://localhost/todoApp', function(err) {
 mongoose.connect(url, function(err) {
     if(err) {
         console.log('connection error', err);
