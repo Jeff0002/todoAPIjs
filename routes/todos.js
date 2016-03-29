@@ -21,7 +21,7 @@ router.get('/user-all', function (req, res, next) {
 
 /* GET /todos listing. */
 router.get('/', function(req, res, next) {
-  Todo.find(function (err, todos) {
+  User.find(function (err, todos) {
     if (err) return next(err);
     res.json(todos);
   });
