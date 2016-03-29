@@ -13,7 +13,7 @@ router.get('/test', function (req, res) {
 })
 
 router.get('/all', function(req, res, next) {
-  Bizbuzz.find(function(err, docs) {
+  bizbuzz.find(function(err, docs) {
     if (err) return next(err);
     res.json(todos);
   })
