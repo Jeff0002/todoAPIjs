@@ -5,6 +5,13 @@ var mongoose = require('mongoose');
 var User = require('../models/User.js');
 
 
+router.get('/user', function(req, res, next) {
+  User.find(function (err, user) {
+    if (err) return next(err);
+    res.json(user);
+  });
+});
+
 router.get('/test', function (req, res) {
     res.json({
         "test": "success"
