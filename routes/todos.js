@@ -20,7 +20,7 @@ MongoClient.connect(URL, function(err, db) {
   if (err) return
 
   var collection = db.collection('user')
-    collection.find({name: 'jeff'}).toArray(function(err, docs) {
+    collection.find({name: 'Jeff'}).toArray(function(err, docs) {
       console.log(docs[0])
       db.close()
     })
