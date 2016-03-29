@@ -13,7 +13,7 @@ router.get('/test', function (req, res) {
 })
 
 router.get('/all', function(req, res, next) {
-  user.find(function(err, docs) {
+  User.find(function(err, docs) {
     if (err) return next(err);
     res.json(todos);
   })
