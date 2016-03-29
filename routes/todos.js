@@ -4,19 +4,19 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Todo = require('../models/Todo.js');
 
-
+/**
 router.get('/test', function(req, res) {
     res.json({"test": "success"});
   });
 });
+**/
 
-/**
+
 router.get('/hello', function (req, res) {
     res.json({
         "test": "hello"
     });
 })
-**/
 
 
 
