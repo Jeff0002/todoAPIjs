@@ -9,7 +9,8 @@ var routes = require('./routes/index');
 var todos = require('./routes/todos');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+var url = 'mongodb://bizbuzz:123456@ds025399.mlab.com:25399/bizbuzz';
+mongoose.connect(url, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
@@ -32,7 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/todos', todos);
+app.use('/userInfo', todos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
