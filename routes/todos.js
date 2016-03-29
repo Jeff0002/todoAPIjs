@@ -6,9 +6,11 @@ var Todo = require('../models/Todo.js');
 
 
 router.get('/test', function(req, res) {
-    res.json("success");
+    res.json("test": "success");
   });
 });
+
+
 
 
 /* GET /todos listing. */
