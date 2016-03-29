@@ -13,7 +13,7 @@ router.get('/test', function (req, res) {
 })
 
 router.get('/all', function(req, res) {
-  User.all(function(err, docs) {
+  User.find(function(err, docs) {
     res.render('user', {user: docs})
   })
 })
