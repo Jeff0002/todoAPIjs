@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var TodoSchema = new mongoose.Schema({
+var UserSchema = new mongoose.Schema({
   name: String,
   Age: Number,
   LoyaltyPoints: Number,
